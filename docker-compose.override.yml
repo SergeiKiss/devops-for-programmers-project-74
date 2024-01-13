@@ -4,12 +4,14 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    command: npm run dev
+    restart: always
+    command: bash -c 'sleep 3 && npm start' 
     volumes:
       - "./app:/app"
 
   caddy:
     image: caddy
+    restart: always
     ports:
       - "80:80"
       - "443:443"
