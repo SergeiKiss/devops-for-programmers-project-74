@@ -4,7 +4,7 @@ services:
     image: postgres
     restart: always
     env_file:
-      - .env
+      - ./app/.env
 
   app:
     extends:
@@ -16,6 +16,6 @@ services:
       dockerfile: Dockerfile.production
     command: npm test
     env_file:
-      - .env
+      - ./app/.env
     depends_on:
       - db
