@@ -15,7 +15,5 @@ services:
       context: .
       dockerfile: Dockerfile.production
     command: npm test
-    env_file:
-      - .env
     depends_on:
       - db
